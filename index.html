@@ -3,12 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>魔王軍クリッカー</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <div class="game-container">
+        <main class="main-area">
+            <header class="stage-info">
+                <h2 id="stage-name">第1章：近隣の村を制圧</h2>
+                <p>目標戦力：<span id="target-power">100</span></p>
+            </header>
+            <div class="status-board">
+                <h1>総戦力：<span id="total-power">0</span></h1>
+                <p class="mana-display">所持マナ：<span id="mana-count">0</span></p>
+            </div>
+            <div class="action-area">
+                <button id="mana-btn" class="summon-btn">陣からマナを集める！</button>
+            </div>
+        </main>
+        <aside class="shop-area">
+            <h3>召喚陣（ショップ）</h3>
+            <div class="monster-card">
+                <div class="monster-info">
+                    <h4>スライム</h4>
+                    <p>生産: +1/秒 | 戦力: 1</p>
+                    <p>所持: <span id="slime-count">0</span> 体</p>
+                </div>
+                <button id="buy-slime-btn" class="buy-btn">召喚 (コスト: <span id="slime-cost">10</span>)</button>
+            </div>
+            <div class="monster-card">
+                <div class="monster-info">
+                    <h4>フェアリー</h4>
+                    <p>生産: +15/秒 | 戦力: 2</p>
+                    <p>所持: <span id="fairy-count">0</span> 体</p>
+                </div>
+                <button id="buy-fairy-btn" class="buy-btn">召喚 (コスト: <span id="fairy-cost">100</span>)</button>
+            </div>
+            <div class="monster-card">
+                <div class="monster-info">
+                    <h4>ゴブリン</h4>
+                    <p>生産: +2/秒 | 戦力: 20</p>
+                    <p>所持: <span id="goblin-count">0</span> 体</p>
+                </div>
+                <button id="buy-goblin-btn" class="buy-btn">召喚 (コスト: <span id="goblin-cost">100</span>)</button>
+            </div>
+            <div class="monster-card">
+                <div class="monster-info">
+                    <h4>ドラゴン</h4>
+                    <p>生産: +50/秒 | 戦力: 1000</p>
+                    <p>所持: <span id="dragon-count">0</span> 体</p>
+                </div>
+                <button id="buy-dragon-btn" class="buy-btn">召喚 (コスト: <span id="dragon-cost">5000</span>)</button>
+            </div>
+        </aside>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

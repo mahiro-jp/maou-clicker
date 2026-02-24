@@ -1,0 +1,109 @@
+/* 1. ベースの設定（全体の文字や色） */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 2. レイアウト箱（PC版：左右並び） */
+.game-container {
+    display: flex; /* 横並び */
+    max-width: 1200px;
+    margin: 0 auto; /* 中央に配置 */
+    height: 100vh; /* 画面の高さいっぱいに広げる */
+}
+
+/* 左側：メイン操作エリア */
+.main-area {
+    flex: 1; /* 右側の残りスペースを全部使う */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 縦の真ん中に寄せる */
+    align-items: center; /* 横の真ん中に寄せる */
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+}
+
+/* --- 右側：ショップエリア --- */
+.shop-area {
+    width: 350px; /* 横幅を固定 */
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto; /* モンスターが増えたらスクロール可能に */
+}
+
+/* 3. 各パーツのデザイン */
+
+/* マナ召喚ボタン（メインボタン） */
+.summon-btn {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+    margin-top: 20px;
+}
+
+.summon-btn:active {
+    transform: scale( 0.95);
+}
+
+/* モンスターカード */
+.monster-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* モンスター名 */
+.monster-card h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 4. スマホ対応 */
+@media ( max-width: 768px) {
+    .game-container {
+        flex-direction: column-reverse; /* 縦並びに変更し、順番を逆にする */
+        height: auto;
+    }
+
+    .shop-area {
+        width: auto; /* スマホでは横幅いっぱいに広げる */
+    }
+
+    /* メインエリア（ボタン）を画面の下に固定する */
+    .main-area {
+        position: sticky;
+        bottom: 0;
+        padding: 15px;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 100; /* 一番手前に表示 */
+    }
+
+    .summon-btn {
+        width: 100%; /* スマホでは横幅いっぱいに広げる */
+    }
+}
